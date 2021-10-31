@@ -27,7 +27,7 @@ public class SampleScript : MonoBehaviour
     //Turn logs on or off depending on the value given
     public void ToggleLogs(bool value)
 	{
-        DisableLogsTool.ToggleLogs(value);
+        DisableLogsTool.ToggleLogs(!value);
     }
 
     //Change log type
