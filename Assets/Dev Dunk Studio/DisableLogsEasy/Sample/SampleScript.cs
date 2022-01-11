@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 
 //Needed to use the Dev Dunk Studio log tools
-using LogsTools;
+using LogTools;
 
 //Sample Script used in the DisableLogsTool Demo Scene
 public class SampleScript : MonoBehaviour
