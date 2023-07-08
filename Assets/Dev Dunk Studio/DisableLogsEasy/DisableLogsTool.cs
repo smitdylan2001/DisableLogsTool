@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace LogTools
+namespace DevDunk.LogTools
 {
 	///<summary>
 	///Contains all different logs that are supported by the Unity Editor. The selected value will be the max log type which is output

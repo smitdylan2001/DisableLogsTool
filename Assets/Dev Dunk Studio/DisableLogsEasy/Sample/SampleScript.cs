@@ -1,38 +1,41 @@
 ﻿using UnityEngine;
 
 //Needed to use the Dev Dunk Studio log tools
-using LogTools;
+using DevDunk.LogTools;
 
-//Sample Script used in the DisableLogsTool Demo Scene
-public class SampleScript : MonoBehaviour
+namespace DevDunk.Samples
 {
-    //Throw a log
-    public void MakeLog()
+    //Sample Script used in the DisableLogsTool Demo Scene
+    public class SampleScript : MonoBehaviour
     {
-        Debug.Log("This is a log");
-    }
+        //Throw a log
+        public void MakeLog()
+        {
+            Debug.Log("This is a log");
+        }
 
-    //Throw a warning
-    public void MakeWarning()
-    {
-        Debug.LogWarning("This is a warning");
-    }
+        //Throw a warning
+        public void MakeWarning()
+        {
+            Debug.LogWarning("This is a warning");
+        }
 
-    //Throw an error
-    public void MakeError()
-    {
-        Debug.LogError("This is an error");
-    }
+        //Throw an error
+        public void MakeError()
+        {
+            Debug.LogError("This is an error");
+        }
 
-    //Turn logs on or off depending on the value given
-    public void ToggleLogs(bool value)
-	{
-        DisableLogsTool.ToggleLogs(!value);
-    }
+        //Turn logs on or off depending on the value given
+        public void ToggleLogs(bool value)
+        {
+            DisableLogsTool.ToggleLogs(!value);
+        }
 
-    //Change log type
-    public void ChangeLogType(int value)
-	{
-        DisableLogsTool.ChangeMaxLogType((WhatToLog)value); //Cast to WhatToLog to convert int to the WhatToLog enum
+        //Change log type
+        public void ChangeLogType(int value)
+        {
+            DisableLogsTool.ChangeMaxLogType((WhatToLog)value); //Cast to WhatToLog to convert int to the WhatToLog enum
+        }
     }
 }
