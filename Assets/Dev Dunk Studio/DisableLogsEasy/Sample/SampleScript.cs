@@ -29,13 +29,13 @@ namespace DevDunk.Samples
         //Turn logs on or off depending on the value given
         public void ToggleLogs(bool value)
         {
-            DisableLogsTool.ToggleLogs(!value);
+            LogManagerPro.ToggleLogs(!value);
         }
 
         //Change log type
         public void ChangeLogType(int value)
         {
-            DisableLogsTool.ChangeMaxLogType((WhatToLog)value); //Cast to WhatToLog to convert int to the WhatToLog enum
+            LogManagerPro.ChangeMaxLogType((MaxLogLevel)value); //Cast to MaxLogLevel to convert int to the MaxLogLevel enum
         }
     }
 }

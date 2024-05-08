@@ -5,7 +5,7 @@ namespace DevDunk.LogTools
 	///<summary>
 	///Contains all different logs that are supported by the Unity Editor. The selected value will be the max log type which is output
 	///</summary>
-	public enum WhatToLog
+	public enum MaxLogLevel
 	{
 		AllLogs,
 		Assert,
@@ -18,19 +18,19 @@ namespace DevDunk.LogTools
 	///<summary>
 	///DisableLogsTool is a tool made by Dev Dunk Studio to easily turn on, turn off and manage logs in your projects
 	///</summary>
-	public class DisableLogsTool : MonoBehaviour
+	public class LogManagerPro : MonoBehaviour
 	{
 		[Header("Editor Settings")]
 		[Tooltip("Disables all logs in the Unity Editor, no matter what is selected in the Max Log Level below")]
 		public bool DisableAllLogsInEditor = false;
 		[Tooltip("Max allowed log type being used in the Unity Editor. Unity will only log the type selected and those below it!")]
-		public WhatToLog MaxLogLevelInEditor;
+		public MaxLogLevel MaxLogLevelInEditor;
 
 		[Header("Build Settings")]
 		[Tooltip("Disables all logs in builds, no matter what is selected in the Max Log Level below")]
 		public bool DisableAllLogsInBuilds = false;
 		[Tooltip("Max allowed log type being used in builds. Unity will only log the type selected and those below it!")]
-		public WhatToLog MaxLogLevelInBuild;
+		public MaxLogLevel MaxLogLevelInBuild;
 
 		private void Awake()
 		{
@@ -40,22 +40,22 @@ namespace DevDunk.LogTools
 			{
 				switch (MaxLogLevelInEditor)
 				{
-					case WhatToLog.AllLogs:
+					case MaxLogLevel.AllLogs:
 						Debug.unityLogger.filterLogType = LogType.Log;
 						break;
-					case WhatToLog.Assert:
+					case MaxLogLevel.Assert:
 						Debug.unityLogger.filterLogType = LogType.Assert;
 						break;
-					case WhatToLog.Warnings:
+					case MaxLogLevel.Warnings:
 						Debug.unityLogger.filterLogType = LogType.Warning;
 						break;
-					case WhatToLog.Errors:
+					case MaxLogLevel.Errors:
 						Debug.unityLogger.filterLogType = LogType.Error;
 						break;
-					case WhatToLog.Exception:
+					case MaxLogLevel.Exception:
 						Debug.unityLogger.filterLogType = LogType.Exception;
 						break;
-					case WhatToLog.None:
+					case MaxLogLevel.None:
 						Debug.unityLogger.logEnabled = false;
 						break;
 				}
@@ -67,19 +67,19 @@ namespace DevDunk.LogTools
 		{
 			switch (MaxLogLevelInBuild)
 			{
-				case WhatToLog.AllLogs:
+				case MaxLogLevel.AllLogs:
 					Debug.unityLogger.filterLogType = LogType.Log;
 					break;
-				case WhatToLog.Assert:
+				case MaxLogLevel.Assert:
 					Debug.unityLogger.filterLogType = LogType.Assert;
 					break;
-				case WhatToLog.Warnings:
+				case MaxLogLevel.Warnings:
 					Debug.unityLogger.filterLogType = LogType.Warning;
 					break;
-				case WhatToLog.Errors:
+				case MaxLogLevel.Errors:
 					Debug.unityLogger.filterLogType = LogType.Error;
 					break;
-				case WhatToLog.Exception:
+				case MaxLogLevel.Exception:
 					Debug.unityLogger.filterLogType = LogType.Exception;
 					break;
 			}
@@ -108,28 +108,28 @@ namespace DevDunk.LogTools
 		///Change maximum allowed log type
 		///</summary>
 		/// <param name="logType">Select what the highest allowed logtype is</param>
-		public static void EnableAllLogs(WhatToLog logType)
+		public static void EnableAllLogs(MaxLogLevel logType)
 		{
 			Debug.unityLogger.logEnabled = true;
 
 			switch (logType)
 			{
-				case WhatToLog.AllLogs:
+				case MaxLogLevel.AllLogs:
 					Debug.unityLogger.filterLogType = LogType.Log;
 					break;
-				case WhatToLog.Assert:
+				case MaxLogLevel.Assert:
 					Debug.unityLogger.filterLogType = LogType.Assert;
 					break;
-				case WhatToLog.Warnings:
+				case MaxLogLevel.Warnings:
 					Debug.unityLogger.filterLogType = LogType.Warning;
 					break;
-				case WhatToLog.Errors:
+				case MaxLogLevel.Errors:
 					Debug.unityLogger.filterLogType = LogType.Error;
 					break;
-				case WhatToLog.Exception:
+				case MaxLogLevel.Exception:
 					Debug.unityLogger.filterLogType = LogType.Exception;
 					break;
-				case WhatToLog.None:
+				case MaxLogLevel.None:
 					Debug.unityLogger.logEnabled = false;
 					break;
 			}
@@ -151,27 +151,27 @@ namespace DevDunk.LogTools
 		///Change maximum allowed log type
 		///</summary>
 		/// <param name="logType">Select what the highest allowed logtype is</param>
-		public static void ChangeMaxLogType(WhatToLog logType)
+		public static void ChangeMaxLogType(MaxLogLevel logType)
 		{
 			Debug.unityLogger.logEnabled = true;
 			switch (logType)
 			{
-				case WhatToLog.AllLogs:
+				case MaxLogLevel.AllLogs:
 					Debug.unityLogger.filterLogType = LogType.Log;
 					break;
-				case WhatToLog.Assert:
+				case MaxLogLevel.Assert:
 					Debug.unityLogger.filterLogType = LogType.Assert;
 					break;
-				case WhatToLog.Warnings:
+				case MaxLogLevel.Warnings:
 					Debug.unityLogger.filterLogType = LogType.Warning;
 					break;
-				case WhatToLog.Errors:
+				case MaxLogLevel.Errors:
 					Debug.unityLogger.filterLogType = LogType.Error;
 					break;
-				case WhatToLog.Exception:
+				case MaxLogLevel.Exception:
 					Debug.unityLogger.filterLogType = LogType.Exception;
 					break;
-				case WhatToLog.None:
+				case MaxLogLevel.None:
 					Debug.unityLogger.logEnabled = false;
 					break;
 			}
