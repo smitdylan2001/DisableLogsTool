@@ -1,0 +1,16 @@
+{
+    "name": "DevDunk.LogManager.Sample",
+    "rootNamespace": "",
+    "references": [
+        "GUID:b9b1f6e3e0631cf43b31e23dd541c3ba"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
